@@ -9,6 +9,8 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+# Metadata and counts only, no guideline text: safe to commit
+!data/processed/ingestion_report.csv
 __pycache__/
 *.pyc
 .DS_Store
