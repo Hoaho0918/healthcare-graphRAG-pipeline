@@ -17,6 +17,7 @@ from src.ingestion.pdf_parser import (
     clean_page_text,
     is_disclaimer_page,
     is_useful_chunk,
+    strip_leading_artifacts,
 )
 
 CHUNKS_PATH = Path("data/processed/document_chunks.json")
@@ -116,6 +117,40 @@ def test_filenames_match_the_manifest(chunks: list[dict]) -> None:
 
     for chunk in chunks:
         assert chunk["source_filename"] == expected[chunk["document_id"]]
+
+
+def test_no_chunk_starts_with_a_splitter_artifact(chunks: list[dict]) -> None:
+    offenders = [
+        chunk["chunk_id"]
+        for chunk in chunks
+        if chunk["text"] != strip_leading_artifacts(chunk["text"])
+    ]
+
+    assert not offenders, f"chunks with leading artifacts: {offenders[:5]}"
+
+
+def test_strip_leading_artifacts_removes_orphaned_separator() -> None:
+    assert strip_leading_artifacts(". Offer metformin.") == "Offer metformin."
+    assert strip_leading_artifacts("   Offer metformin.") == "Offer metformin."
+    assert strip_leading_artifacts(", and review annually.") == "and review annually."
+
+
+def test_strip_leading_artifacts_preserves_wording_and_internal_punctuation() -> None:
+    text = (
+        "1.6.5 Measure HbA1c at 3-monthly to 6-monthly intervals (e.g. 48 mmol/mol, "
+        "6.5%); review, then tailor to the person's needs. [2015]"
+    )
+
+    assert strip_leading_artifacts(text) == text
+
+
+def test_strip_leading_artifacts_does_not_touch_the_end_of_a_chunk() -> None:
+    assert strip_leading_artifacts(". Review the care plan...") == "Review the care plan..."
+
+
+def test_strip_leading_artifacts_never_removes_letters_or_digits() -> None:
+    for text in ("48 mmol/mol target", "HbA1c monitoring", "0.5 mg daily"):
+        assert strip_leading_artifacts(text) == text
 
 
 def test_cleaning_removes_nice_layout_boilerplate() -> None:

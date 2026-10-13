@@ -73,6 +73,9 @@ DISCLAIMER_MARKERS = (
 )
 
 DOT_LEADER_PATTERN = re.compile(r"\.{4,}")
+# Only whitespace and separator punctuation. Cannot match letters or digits,
+# so clinical wording can never be removed by it.
+LEADING_ARTIFACT_PATTERN = re.compile(r"^[\s.,;:]+")
 TRAILING_CODE_PATTERN = re.compile(rf"\s*\({NICE_DOCUMENT_CODE}\)\s*$", re.IGNORECASE)
 
 
@@ -150,6 +153,17 @@ def clean_text(text: str) -> str:
     Prefer `clean_page_text`, which can also strip the repeated document title.
     """
     return clean_page_text(text)
+
+
+def strip_leading_artifacts(text: str) -> str:
+    """Remove leading whitespace and dangling separator punctuation.
+
+    The recursive splitter cuts on ". ", which leaves some chunks starting with
+    an orphaned ". ". This is presentation cleanup at the chunk boundary only:
+    no character inside the retained wording is altered, and nothing is
+    removed from the end of the chunk.
+    """
+    return LEADING_ARTIFACT_PATTERN.sub("", text).strip()
 
 
 def is_disclaimer_page(text: str) -> bool:
@@ -252,8 +266,12 @@ def parse_pdf_with_stats(
             disclaimer_pages += 1
             continue
 
-        for chunk_index, chunk_text in enumerate(splitter.split_text(page_text)):
+        for chunk_index, raw_chunk in enumerate(splitter.split_text(page_text)):
             chunks_considered += 1
+
+            # Cleaned before the retention test so length is measured on the
+            # text that is actually stored.
+            chunk_text = strip_leading_artifacts(raw_chunk)
 
             if not is_useful_chunk(chunk_text):
                 continue
@@ -270,7 +288,7 @@ def parse_pdf_with_stats(
                     source_url=document.source_url,
                     page_number=page_number,
                     chunk_index=chunk_index,
-                    text=chunk_text.strip(),
+                    text=chunk_text,
                 )
             )
 
