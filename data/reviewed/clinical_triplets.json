@@ -1,0 +1,609 @@
+{
+  "schema_version": "1.0",
+  "corpus": "10 public NICE diabetes guideline PDFs",
+  "extraction_method": "manual, no LLM extraction; provenance fields auto-filled by chunk_id lookup against data/processed/document_chunks.json",
+  "disclaimer": "Educational retrieval prototype. Not clinical decision support.",
+  "note": "source_url is empty until the manifest is enriched. evidence_text is a verbatim substring of the cited chunk, enforced by tests/test_reviewed_triplets.py.",
+  "triplets": [
+    {
+      "triplet_id": "t001",
+      "source": {
+        "label": "Drug",
+        "name": "Metformin"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Diabetes in pregnancy"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p9_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 9,
+      "source_url": "",
+      "evidence_text": "Women with diabetes may be advised to use metformin as an adjunct or alternative to insulin in the preconception period and during pregnancy",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t002",
+      "source": {
+        "label": "Recommendation",
+        "name": "Offer metformin if blood glucose targets are not met"
+      },
+      "relation": "RECOMMENDS",
+      "target": {
+        "label": "Drug",
+        "name": "Metformin"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p14_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 14,
+      "source_url": "",
+      "evidence_text": "If blood glucose targets are not met with diet and exercise changes within 1 to 2 weeks, offer metformin.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t003",
+      "source": {
+        "label": "Recommendation",
+        "name": "Take folic acid 5 mg daily until 12 weeks of gestation"
+      },
+      "relation": "RECOMMENDS",
+      "target": {
+        "label": "Drug",
+        "name": "Folic acid"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p8_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 8,
+      "source_url": "",
+      "evidence_text": "Advise women with diabetes who are planning a pregnancy to take folic acid (5 mg/day) until 12 weeks of gestation to reduce the risk of having a baby with a neural tube defect.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t004",
+      "source": {
+        "label": "Recommendation",
+        "name": "Take folic acid 5 mg daily until 12 weeks of gestation"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Population",
+        "name": "Women with diabetes planning a pregnancy"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p8_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 8,
+      "source_url": "",
+      "evidence_text": "Advise women with diabetes who are planning a pregnancy to take folic acid (5 mg/day) until 12 weeks of gestation",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t005",
+      "source": {
+        "label": "Condition",
+        "name": "Type 1 diabetes"
+      },
+      "relation": "USES_TECHNOLOGY",
+      "target": {
+        "label": "Technology",
+        "name": "Real-time continuous glucose monitoring"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p18_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 18,
+      "source_url": "",
+      "evidence_text": "Offer real-time continuous glucose monitoring (rtCGM) to all pregnant women with type 1 diabetes to help them meet their pregnancy blood glucose targets",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t006",
+      "source": {
+        "label": "Technology",
+        "name": "Real-time continuous glucose monitoring"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Population",
+        "name": "Pregnant women with type 1 diabetes"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p18_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 18,
+      "source_url": "",
+      "evidence_text": "Offer real-time continuous glucose monitoring (rtCGM) to all pregnant women with type 1 diabetes",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t007",
+      "source": {
+        "label": "Condition",
+        "name": "Diabetes in pregnancy"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Diabetic retinopathy"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p19_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 19,
+      "source_url": "",
+      "evidence_text": "if they have diabetic retinopathy, offer an additional retinal assessment at 16 to 20 weeks",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t008",
+      "source": {
+        "label": "Condition",
+        "name": "Diabetes in pregnancy"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Diabetic nephropathy"
+      },
+      "chunk_id": "nice_diabetes_pregnancy_001_p6_c0",
+      "document_id": "nice_diabetes_pregnancy_001",
+      "source_filename": "diabetes-in-pregnancy-management-from-preconception-to-the-postnatal-period.pdf",
+      "page_number": 6,
+      "source_url": "",
+      "evidence_text": "the need for diabetic nephropathy assessment before pregnancy",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t009",
+      "source": {
+        "label": "Drug",
+        "name": "Tirzepatide"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "chunk_id": "nice_tirzepatide_001_p4_c0",
+      "document_id": "nice_tirzepatide_001",
+      "source_filename": "tirzepatide-for-treating-type-2-diabetes.pdf",
+      "page_number": 4,
+      "source_url": "",
+      "evidence_text": "Tirzepatide is recommended for treating type 2 diabetes alongside diet and exercise in adults when it is insufficiently controlled",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t010",
+      "source": {
+        "label": "Recommendation",
+        "name": "Tirzepatide for insufficiently controlled type 2 diabetes"
+      },
+      "relation": "RECOMMENDS",
+      "target": {
+        "label": "Drug",
+        "name": "Tirzepatide"
+      },
+      "chunk_id": "nice_tirzepatide_001_p4_c0",
+      "document_id": "nice_tirzepatide_001",
+      "source_filename": "tirzepatide-for-treating-type-2-diabetes.pdf",
+      "page_number": 4,
+      "source_url": "",
+      "evidence_text": "Tirzepatide is recommended for treating type 2 diabetes alongside diet and exercise in adults",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t011",
+      "source": {
+        "label": "Drug",
+        "name": "Insulin degludec"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "chunk_id": "nice_insulin_degludec_001_p2_c0",
+      "document_id": "nice_insulin_degludec_001",
+      "source_filename": "type-2-diabetes-insulin-degludec.pdf",
+      "page_number": 2,
+      "source_url": "",
+      "evidence_text": "Insulin degludec is non-inferior to insulin glargine for glycaemic control",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t012",
+      "source": {
+        "label": "Condition",
+        "name": "Type 1 diabetes"
+      },
+      "relation": "USES_TECHNOLOGY",
+      "target": {
+        "label": "Technology",
+        "name": "Hybrid closed loop system"
+      },
+      "chunk_id": "nice_hybrid_closed_loop_001_p7_c0",
+      "document_id": "nice_hybrid_closed_loop_001",
+      "source_filename": "hybrid-closed-loop-systems-for-managing-blood-glucose-levels-in-type-1-diabetes.pdf",
+      "page_number": 7,
+      "source_url": "",
+      "evidence_text": "Information about hybrid closed loop systems Clinical need and practice Type 1 diabetes",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t013",
+      "source": {
+        "label": "Recommendation",
+        "name": "Phased rollout of hybrid closed loop systems"
+      },
+      "relation": "RECOMMENDS",
+      "target": {
+        "label": "Technology",
+        "name": "Hybrid closed loop system"
+      },
+      "chunk_id": "nice_hybrid_closed_loop_001_p4_c0",
+      "document_id": "nice_hybrid_closed_loop_001",
+      "source_filename": "hybrid-closed-loop-systems-for-managing-blood-glucose-levels-in-type-1-diabetes.pdf",
+      "page_number": 4,
+      "source_url": "",
+      "evidence_text": "Access to hybrid closed loop systems will be through a 5-year phased roll out",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t014",
+      "source": {
+        "label": "Condition",
+        "name": "Diabetic foot problems"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Charcot arthropathy"
+      },
+      "chunk_id": "nice_diabetic_foot_001_p9_c0",
+      "document_id": "nice_diabetic_foot_001",
+      "source_filename": "diabetic-foot-problems-prevention-and-management.pdf",
+      "page_number": 9,
+      "source_url": "",
+      "evidence_text": "suspicion of an acute Charcot arthropathy, or an unexplained hot, swollen foot with a change in colour",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t015",
+      "source": {
+        "label": "Recommendation",
+        "name": "Assess risk of diabetic foot problems and amputation"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Condition",
+        "name": "Diabetic foot problems"
+      },
+      "chunk_id": "nice_diabetic_foot_001_p8_c0",
+      "document_id": "nice_diabetic_foot_001",
+      "source_filename": "diabetic-foot-problems-prevention-and-management.pdf",
+      "page_number": 8,
+      "source_url": "",
+      "evidence_text": "current risk of developing a diabetic foot problem or needing an amputation using the following risk stratification",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t016",
+      "source": {
+        "label": "Recommendation",
+        "name": "Assess and document diabetic foot ulcers"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Condition",
+        "name": "Diabetic foot problems"
+      },
+      "chunk_id": "nice_diabetic_foot_001_p14_c0",
+      "document_id": "nice_diabetic_foot_001",
+      "source_filename": "diabetic-foot-problems-prevention-and-management.pdf",
+      "page_number": 14,
+      "source_url": "",
+      "evidence_text": "If a person has a diabetic foot ulcer, assess and document the size, depth and position of the ulcer.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t017",
+      "source": {
+        "label": "Recommendation",
+        "name": "Multidisciplinary foot care service access"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Condition",
+        "name": "Diabetic foot problems"
+      },
+      "chunk_id": "nice_diabetic_foot_001_p7_c0",
+      "document_id": "nice_diabetic_foot_001",
+      "source_filename": "diabetic-foot-problems-prevention-and-management.pdf",
+      "page_number": 7,
+      "source_url": "",
+      "evidence_text": "The multidisciplinary foot care service should have access to rehabilitation services, plastic surgery, psychological services and nutritional services.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t018",
+      "source": {
+        "label": "Condition",
+        "name": "Type 1 diabetes"
+      },
+      "relation": "USES_TECHNOLOGY",
+      "target": {
+        "label": "Technology",
+        "name": "Continuous glucose monitoring"
+      },
+      "chunk_id": "nice_type1_adults_001_p18_c0",
+      "document_id": "nice_type1_adults_001",
+      "source_filename": "type-1-diabetes-in-adults-diagnosis-and-management.pdf",
+      "page_number": 18,
+      "source_url": "",
+      "evidence_text": "Offer adults with type 1 diabetes a choice of real-time continuous glucose monitoring (rtCGM) or intermittently scanned continuous glucose monitoring",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t019",
+      "source": {
+        "label": "Technology",
+        "name": "Continuous glucose monitoring"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Population",
+        "name": "Adults with type 1 diabetes"
+      },
+      "chunk_id": "nice_type1_adults_001_p18_c0",
+      "document_id": "nice_type1_adults_001",
+      "source_filename": "type-1-diabetes-in-adults-diagnosis-and-management.pdf",
+      "page_number": 18,
+      "source_url": "",
+      "evidence_text": "Offer adults with type 1 diabetes a choice of real-time continuous glucose monitoring",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t020",
+      "source": {
+        "label": "Condition",
+        "name": "Type 1 diabetes"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Diabetic ketoacidosis"
+      },
+      "chunk_id": "nice_type1_adults_001_p26_c0",
+      "document_id": "nice_type1_adults_001",
+      "source_filename": "type-1-diabetes-in-adults-diagnosis-and-management.pdf",
+      "page_number": 26,
+      "source_url": "",
+      "evidence_text": "risk of hypoglycaemia and diabetic ketoacidosis",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t021",
+      "source": {
+        "label": "Condition",
+        "name": "Type 1 diabetes"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Hypoglycaemia"
+      },
+      "chunk_id": "nice_type1_adults_001_p26_c0",
+      "document_id": "nice_type1_adults_001",
+      "source_filename": "type-1-diabetes-in-adults-diagnosis-and-management.pdf",
+      "page_number": 26,
+      "source_url": "",
+      "evidence_text": "risk of hypoglycaemia and diabetic ketoacidosis",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t022",
+      "source": {
+        "label": "Drug",
+        "name": "Metformin"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "chunk_id": "nice_type2_adults_001_p71_c0",
+      "document_id": "nice_type2_adults_001",
+      "source_filename": "type-2-diabetes-in-adults-management.pdf",
+      "page_number": 71,
+      "source_url": "",
+      "evidence_text": "When starting first-line therapy with metformin and other medicines, the committee noted the importance of introducing the medicines sequentially.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t023",
+      "source": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Cardiovascular disease"
+      },
+      "chunk_id": "nice_type2_adults_001_p36_c0",
+      "document_id": "nice_type2_adults_001",
+      "source_filename": "type-2-diabetes-in-adults-management.pdf",
+      "page_number": 36,
+      "source_url": "",
+      "evidence_text": "cardiovascular risk factors that are more commonly associated with the condition, such as hypertension and dyslipidaemia",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t024",
+      "source": {
+        "label": "Recommendation",
+        "name": "Consider an insulin pump when multiple daily injections are not appropriate"
+      },
+      "relation": "RECOMMENDS",
+      "target": {
+        "label": "Technology",
+        "name": "Insulin pump"
+      },
+      "chunk_id": "nice_pediatric_diabetes_001_p11_c0",
+      "document_id": "nice_pediatric_diabetes_001",
+      "source_filename": "diabetes-type-1-and-type-2-in-children-and-young-people-diagnosis-and-management.pdf",
+      "page_number": 11,
+      "source_url": "",
+      "evidence_text": "If multiple daily insulin injections are not appropriate for a particular child or young person, consider an insulin pump",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t025",
+      "source": {
+        "label": "Recommendation",
+        "name": "Consider an insulin pump when multiple daily injections are not appropriate"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Population",
+        "name": "Children and young people with diabetes"
+      },
+      "chunk_id": "nice_pediatric_diabetes_001_p11_c0",
+      "document_id": "nice_pediatric_diabetes_001",
+      "source_filename": "diabetes-type-1-and-type-2-in-children-and-young-people-diagnosis-and-management.pdf",
+      "page_number": 11,
+      "source_url": "",
+      "evidence_text": "If multiple daily insulin injections are not appropriate for a particular child or young person",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t026",
+      "source": {
+        "label": "Drug",
+        "name": "Empagliflozin"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "chunk_id": "nice_pediatric_diabetes_001_p82_c0",
+      "document_id": "nice_pediatric_diabetes_001",
+      "source_filename": "diabetes-type-1-and-type-2-in-children-and-young-people-diagnosis-and-management.pdf",
+      "page_number": 82,
+      "source_url": "",
+      "evidence_text": "one SGLT2 inhibitor, empagliflozin, were generally effective in the short term at reducing glucose levels in children and young people with type 2 diabetes",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t027",
+      "source": {
+        "label": "Drug",
+        "name": "Liraglutide"
+      },
+      "relation": "TREATS",
+      "target": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "chunk_id": "nice_pediatric_diabetes_001_p82_c0",
+      "document_id": "nice_pediatric_diabetes_001",
+      "source_filename": "diabetes-type-1-and-type-2-in-children-and-young-people-diagnosis-and-management.pdf",
+      "page_number": 82,
+      "source_url": "",
+      "evidence_text": "2 GLP-1 receptor agonists, liraglutide and dulaglutide, and one SGLT2 inhibitor, empagliflozin, were generally effective in the short term at reducing glucose levels in children and young people with type 2 diabetes",
+      "confidence": "medium",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t028",
+      "source": {
+        "label": "Recommendation",
+        "name": "Intensive lifestyle-change programme to prevent type 2 diabetes"
+      },
+      "relation": "APPLIES_TO",
+      "target": {
+        "label": "Population",
+        "name": "People at high risk of type 2 diabetes"
+      },
+      "chunk_id": "nice_diabetes_prevention_high_risk_001_p5_c0",
+      "document_id": "nice_diabetes_prevention_high_risk_001",
+      "source_filename": "type-2-diabetes-prevention-in-people-at-high-risk.pdf",
+      "page_number": 5,
+      "source_url": "",
+      "evidence_text": "help them provide those at high risk with an effective and appropriate intensive lifestyle-change programme to prevent or delay the onset of type 2 diabetes",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t029",
+      "source": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Foot ulcers"
+      },
+      "chunk_id": "nice_diabetes_prevention_population_001_p36_c0",
+      "document_id": "nice_diabetes_prevention_population_001",
+      "source_filename": "type-2-diabetes-prevention-population-and-communitylevel-interventions.pdf",
+      "page_number": 36,
+      "source_url": "",
+      "evidence_text": "It can lead to long-term complications including eye problems, kidney disease, foot ulcers and cardiovascular disease.",
+      "confidence": "high",
+      "review_status": "approved"
+    },
+    {
+      "triplet_id": "t030",
+      "source": {
+        "label": "Condition",
+        "name": "Type 2 diabetes"
+      },
+      "relation": "HAS_COMPLICATION",
+      "target": {
+        "label": "Complication",
+        "name": "Kidney disease"
+      },
+      "chunk_id": "nice_diabetes_prevention_population_001_p36_c0",
+      "document_id": "nice_diabetes_prevention_population_001",
+      "source_filename": "type-2-diabetes-prevention-population-and-communitylevel-interventions.pdf",
+      "page_number": 36,
+      "source_url": "",
+      "evidence_text": "It can lead to long-term complications including eye problems, kidney disease, foot ulcers and cardiovascular disease.",
+      "confidence": "high",
+      "review_status": "approved"
+    }
+  ]
+}
